@@ -1,17 +1,19 @@
 .merchant {
-  margin: 0 5rpx;
+  width: 100%;
+  padding: 5rpx;
   background-color: #fff;
   display: flex;
+  border-bottom: 1rpx solid #f4f4f4 
 }
 
 .sign {
-  height: 162rpx;
-  padding: 1rpx 0;
+  height: 180rpx;
+  padding: 5rpx;
 }
 
 .sign .pic {
-  width: 160rpx;
-  height: 160rpx;
+  width: 180rpx;
+  height: 180rpx;
 }
 
 .info {
@@ -49,7 +51,7 @@
 
 .orderPage-sideBar {
   width: 150rpx;
-  height: 650rpx;
+  height: 660rpx;
   background: #f4f4f4;
 }
 
@@ -70,9 +72,10 @@
   border-bottom: 2rpx dashed #ececec;
 }
 
-.selected.menu{
-  background: white
+.selected.menu {
+  background: white;
 }
+
 .selected.menu::before {
   content: "";
   position: absolute;
@@ -186,6 +189,7 @@
   left: 0;
   bottom: 0;
   height: 80rpx;
+  z-index: 9999；;
 }
 
 .footer .img {
@@ -219,7 +223,7 @@
   background: white;
   line-height: 80rpx;
   padding-left: 130rpx;
-  background: #333
+  background: #333;
 }
 
 .footer .pay {
@@ -241,9 +245,9 @@
 }
 
 #orderPage .costtotal {
-  text-decoration:line-through;
-  width:120rpx;
-  font-size:30rpx;
+  text-decoration: line-through;
+  width: 120rpx;
+  font-size: 30rpx;
 }
 
 .footer.active .free {
@@ -275,16 +279,31 @@
   left: 0;
   bottom: 80rpx;
   width: 100%;
-  background: #f7f7f7;
-  padding: 30rpx 0;
+  background: #fff;
+}
+
+.cart-detail .list .title {
+  background: #ececec;
+  padding: 10rpx 30rpx;
+  font-size: 32rpx;
+}
+
+.cart-detail .list .title::before {
+  content: "";
+  position: absolute;
+  left: 15rpx;
+  top: 18rpx;
+  height: 30rpx;
+  width: 7rpx;
+  background: #ffd161;
 }
 
 .cart-detail .list .item {
   display: -webkit-flex;
   color: #333;
   font-size: 32rpx;
-  line-height: 50rpx;
   padding: 20rpx 40rpx;
+  border-bottom: 1rpx solid #ececec;
 }
 
 .cart-detail .list .item .name {
@@ -296,12 +315,30 @@
 }
 
 .cart-detail .list .item .reduce, .cart-detail .list .item .add {
-  font-size: 40rpx;
-  background: #feb70f;
   width: 40rpx;
   height: 40rpx;
+  border-radius: 30rpx;
   text-align: center;
-  border-radius: 50%;
+}
+
+.cart-detail .list .item .add {
+  font-size: 35rpx;
+  line-height: 37rpx;
+  font-weight: 700;
+  background: #ffd161;
+  margin-left: 15rpx;
+}
+
+.cart-detail .list .item .reduce {
+  margin-right: 15rpx;
+  line-height: 28rpx;
+  font-size: 60rpx;
+  font-weight: 500;
+  box-sizing: border-box;
+  border: 2rpx;
+  border-style: solid;
+  border-color: #b0b0b0;
+  color: #b0b0b0;
 }
 
 .cart-detail .list .item .num {

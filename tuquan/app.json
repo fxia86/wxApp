@@ -6,9 +6,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#e64340",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "土圈",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#666",
@@ -18,9 +18,9 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/icon/hot.png",
-        "selectedIconPath": "images/icon/hot_r.png",
-        "text": "点餐"
+        "iconPath": "images/icon/yc.png",
+        "selectedIconPath": "images/icon/yc_r.png",
+        "text": "用餐"
       },
       {
         "pagePath": "pages/me/me",

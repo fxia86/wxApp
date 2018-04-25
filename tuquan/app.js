@@ -1,4 +1,6 @@
 //app.js
+const fetch = require("/utils/util.js");
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -7,10 +9,8 @@ App({
     wx.setStorageSync('logs', logs)
 
     //banner
-    wx.request({
-      url: "https://www.easy-mock.com/mock/5adffae3526fec1c9efa8a2e/banner",
-      header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      method: 'GET',
+    fetch._get({
+      method: "banner",
       success: (res) => {
         if (res.statusCode == 200 && res.data.length > 0) {
           this.globalData.banners = res.data;

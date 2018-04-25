@@ -1,42 +1,56 @@
-/*header*/
-
 .header {
   position: relative;
   height: 240rpx;
   width: 750rpx;
-  /* background-color: #FFA07A; */
-  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#e64340), to(rgba(240, 230, 140, 0.5)));
+  background-color: #ececec;
+  /* background: -webkit-gradient(linear, 0 0, 0 bottom, from(#e64340), to(rgba(240, 230, 140, 0.5))); */
 }
 
 .login {
-  left: 50%; 
-  margin:90rpx 0 0 -60rpx;
+  left: 50%;
+  margin: 90rpx 0 0 -60rpx;
 }
 
 .avartar {
   position: absolute;
-  left: 50%;
-  top: 10%;
-  margin: 0 0 0 -64rpx;
+  left: 10%;
+  top: 25%;
   width: 128rpx;
   height: 128rpx;
   border-radius: 50%;
 }
 
 .nickname {
-  width: 750rpx;
   position: absolute;
-  bottom: 10rpx;
-  text-align: center;
-  font-size: 30rpx;
-  color: #666;
+  left: 35%;
+  top: 30%;
+  display: flex;
+  font-size: 36rpx;
 }
 
-/*body */
+.nickname image {
+  height: 48rpx;
+  width: 48rpx;
+  margin: 3rpx 20rpx;
+}
+
+.tel {
+  position: absolute;
+  color: #666;
+  left: 30%;
+  top: 60%;
+  font-size: 30rpx;
+  display: flex;
+}
+
+.tel image {
+  height: 48rpx;
+  width: 48rpx;
+}
 
 .bonus {
   width: 750rpx;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   font-size: 30rpx;
   color: #666;
   background-color: #fff;
@@ -47,18 +61,35 @@
   display: flex;
   flex-direction: column;
   margin: 20rpx 35rpx;
+  width: 50%;
+  align-items: center;
 }
 
 .bonusOption image {
   width: 48rpx;
   height: 48rpx;
-  margin: 10rpx 30rpx;
+  margin: 15rpx;
 }
 
 .bonusOption .option {
+  margin: 0 -20rpx 0 -10rpx;
+  display: flex;
+}
+
+.bonusOption .option .text {
   font-size: 24rpx;
   color: #666;
-  margin: 0 -20rpx 0 -10rpx;
+  margin: 20rpx;
+}
+
+.bonusOption  .points {
+  font-size: 36rpx;
+  color: #ff9933;
+}
+
+.bonusOption  .rebate {
+  font-size: 36rpx;
+  color: #e64340;
 }
 
 /* .nav{

@@ -1,17 +1,18 @@
 const app = getApp()
-const util = require('../../utils/util.js')
+const fetch = require("../../utils/util.js");
 
 Page({
   data: {
-    // signedPoints: wx.getStorageSync('signedPoints') || 0,
-    sharedPoints: 0,
-    usedPoints: 0,
-    signedOn: false,
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    userInfo: {}
+    userInfo: {},
+    tel: '176****2586',
+    points: 258,
+    rebate: 666.66
   },
   onLoad: function () {
+    this.setData({ banners: app.globalData.banners })
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -38,67 +39,12 @@ Page({
         }
       })
     }
-
-    if (util.isSignedOn()) {
-      this.setData({
-        signedOn: true,
-      })
-    }
   },
   getUserInfo: function (e) {
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
-    })
-  },
-  signOn: function () {
-    if (!this.data.signedOn) {
-      let signedPoints = this.data.signedPoints + 10;
-      this.setData({
-        signedPoints: signedPoints,
-        signedOn: true,
-      })
-      wx.setStorageSync('signedPoints', signedPoints)
-      wx.setStorageSync('lastSignedTime', new Date().getTime())
-      wx.showToast({
-        title: '签到成功，积分+10',
-        image: '/images/icon/kiss.png'
-      })
-    }
-    else {
-      wx.showToast({
-        title: '今天已经签到',
-        image: '/images/icon/smile.png'
-      })
-    }
-  },
-  comingSoon: function () {
-    wx.showToast({
-      title: '敬请期待',
-      icon: 'loading'
-    })
-  },
-  showRule: function () {
-    // wx.showModal({
-    //   content: '签到得10积分，分享得*积分，积分可以抽奖或在商城兑换礼品哦！',
-    //   showCancel: false,
-    //   confirmText: '知道啦',
-    //   success: function (res) {
-    //     if (res.confirm) {
-    //       console.log('用户点击确定')
-    //     } else if (res.cancel) {
-    //       console.log('用户点击取消')
-    //     }
-    //   }
-    // })
-    this.setData({
-      showRuleModal: true
-    })
-  },
-  hideRule:function  (){
-    this.setData({
-      showRuleModal:false
     })
   }
 })

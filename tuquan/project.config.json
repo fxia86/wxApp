@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -32,19 +32,27 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": 0,
-					"name": "m",
+					"name": "merchant",
 					"pathName": "pages/merchant/merchant",
-					"query": ""
+					"query": "",
+					"scene": "1011"
 				},
 				{
 					"id": 1,
 					"name": "scan",
 					"pathName": "pages/index/index",
 					"query": "mid=9",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "me",
+					"pathName": "pages/me/me",
+					"query": "",
 					"scene": "1011"
 				}
 			]

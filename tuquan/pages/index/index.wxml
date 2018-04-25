@@ -1,5 +1,5 @@
 <import src="../head/head.wxml" />
 <template wx:if="{{banners.length>0}}" is="head" data="{{banners}}" />
 <view class="container">
-  <button bindtap="scanCode"> 扫码点餐 </button>
+  <button bindtap="scanCode"> 扫码用餐 </button>
 </view>

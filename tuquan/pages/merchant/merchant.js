@@ -1,4 +1,5 @@
 const app = getApp()
+const fetch = require("../../utils/util.js");
 
 Page({
   /**
@@ -11,6 +12,7 @@ Page({
     selected: 0,
     cart: {
       count: 0,
+      classify: 0,
       total: 0,
       list: {}
     },
@@ -31,10 +33,8 @@ Page({
       list[id].num++
     }
     else {
-      list[id] = {
-        num: 1,
-        goods: goods
-      };
+      list[id] = { num: 1, goods: goods };
+      this.data.cart.classify += 1;
     }
     this.data.cart.list = list;
     this.setData({
@@ -47,6 +47,7 @@ Page({
     this.data.cart.total -= list[id].goods.price;
     if (list[id].num <= 1) {
       delete list[id];
+      this.data.cart.classify -= 1;
     }
     else {
       list[id].num -= 1;
@@ -95,13 +96,21 @@ Page({
     this.setData({ banners: app.globalData.banners })
 
     var that = this;
-    wx.request({
-      url: "https://www.easy-mock.com/mock/5adffae3526fec1c9efa8a2e/menu",
-      method: "GET",
+
+    fetch._get({
+      method: "menu", 
       success: function (res) {
         that.setData({
           menu: res.data.data,
         })
+      }
+    });
+
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          clientHeight: res.windowHeight
+        });
       }
     });
   },
