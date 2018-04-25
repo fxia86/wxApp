@@ -1,3 +1,14 @@
+page{
+  font-family:"微软雅黑"; 
+  background: white;
+  box-sizing: border-box;
+  position: fixed;
+  top:0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
 /**app.wxss**/
 .container {
   height: 100%;
@@ -16,10 +27,10 @@
 }
 
 swiper {
-  height: 400rpx;
+  height: 300rpx;
 }
 
 .banners {
   width: 750rpx;
-  height: 396rpx;
+  height: 296rpx;
 }

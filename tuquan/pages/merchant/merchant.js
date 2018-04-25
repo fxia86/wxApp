@@ -5,11 +5,78 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mid: wx.getStorageSync('mid') || 0, 
-    banners: []
-
+    mid: wx.getStorageSync('mid') || 0,
+    banners: [],
+    menu: [],
+    selected: 0,
+    cart: {
+      count: 0,
+      total: 0,
+      list: {}
+    },
+    showCartDetail: false
   },
-
+  tapAddCart: function (e) {
+    this.addCart(e.target.dataset.id);
+  },
+  tapReduceCart: function (e) {
+    this.reduceCart(e.target.dataset.id);
+  },
+  addCart: function (id) {
+    var goods = this.data.menu[this.data.selected].goods.filter(g => g.id == id)[0];
+    var list = this.data.cart.list;
+    this.data.cart.count += 1;
+    this.data.cart.total += goods.price;
+    if (list[id]) {
+      list[id].num++
+    }
+    else {
+      list[id] = {
+        num: 1,
+        goods: goods
+      };
+    }
+    this.data.cart.list = list;
+    this.setData({
+      cart: this.data.cart
+    })
+  },
+  reduceCart: function (id) {
+    var list = this.data.cart.list;
+    this.data.cart.count -= 1;
+    this.data.cart.total -= list[id].goods.price;
+    if (list[id].num <= 1) {
+      delete list[id];
+    }
+    else {
+      list[id].num -= 1;
+    }
+    this.data.cart.list = list;
+    this.setData({
+      cart: this.data.cart
+    })
+    if (this.data.cart.count == 0) {
+      this.setData({
+        showCartDetail: false
+      });
+    }
+  },
+  turnMenu: function (e) {
+    this.setData({
+      selected: e.currentTarget.dataset.index
+    })
+  },
+  showCartDetail: function (e) {
+    if (this.data.cart.count == 0) return false
+    this.setData({
+      showCartDetail: !this.data.showCartDetail
+    });
+  },
+  hideCartDetail: function () {
+    this.setData({
+      showCartDetail: false
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -26,6 +93,17 @@ Page({
       })
     }
     this.setData({ banners: app.globalData.banners })
+
+    var that = this;
+    wx.request({
+      url: "https://www.easy-mock.com/mock/5adffae3526fec1c9efa8a2e/menu",
+      method: "GET",
+      success: function (res) {
+        that.setData({
+          menu: res.data.data,
+        })
+      }
+    });
   },
 
   /**

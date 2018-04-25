@@ -28,6 +28,7 @@ Page({
   },
   onLoad: function () {
     this.setData({ banners: app.globalData.banners })
+    console.log(banners)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

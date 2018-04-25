@@ -8,9 +8,9 @@ App({
 
     //banner
     wx.request({
-      url: "https://api.xiafeng.xyz/test",
+      url: "https://www.easy-mock.com/mock/5adffae3526fec1c9efa8a2e/banner",
       header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      method: 'POST',
+      method: 'GET',
       success: (res) => {
         if (res.statusCode == 200 && res.data.length > 0) {
           this.globalData.banners = res.data;

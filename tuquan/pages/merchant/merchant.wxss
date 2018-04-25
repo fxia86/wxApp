@@ -1,5 +1,5 @@
 .merchant {
-  margin: 10rpx 10rpx 0 10rpx;
+  margin: 0 5rpx;
   background-color: #fff;
   display: flex;
 }
@@ -13,8 +13,9 @@
   width: 160rpx;
   height: 160rpx;
 }
-.info{
-    margin-left: 30rpx;
+
+.info {
+  margin-left: 30rpx;
 }
 
 .title {
@@ -31,4 +32,280 @@
 
 .addr {
   font-size: 32rpx;
+}
+
+#orderPage {
+  display: flex;
+  height: auto;
+}
+
+#commentPage {
+  height: auto;
+}
+
+#restaurantPage {
+  background: yellow;
+}
+
+.orderPage-sideBar {
+  width: 150rpx;
+  height: 650rpx;
+  background: #f4f4f4;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menuList .menu {
+  height: 100rpx;
+  width: 140rpx;
+  margin-right: -8rpx;
+  position: relative;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  border-bottom: 2rpx dashed #ececec;
+}
+
+.selected.menu{
+  background: white
+}
+.selected.menu::before {
+  content: "";
+  position: absolute;
+  left: -10rpx;
+  top: 0rpx;
+  height: 100rpx;
+  width: 7rpx;
+  background: #ffd161;
+}
+
+.foodList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 650rpx;
+}
+
+.foodList .title {
+  padding: 15rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  font-size: 25rpx;
+  background: #ececec;
+}
+
+.food {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 170rpx;
+  border-bottom: 1rpx solid #ececec;
+  background: white;
+}
+
+.food::before {
+  content: "";
+  width: 15rpx;
+  height: 100%;
+  left: -15rpx;
+  top: 0;
+  border: 1px solid white;
+}
+
+.food .img {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.food-info {
+  padding-left: 15rpx;
+  line-height: 48rpx;
+  flex: 1;
+}
+
+.food .name {
+  font-size: 30rpx;
+}
+
+.food .sales {
+  font-size: 25rpx;
+  color: #acacac;
+}
+
+.food .price {
+  font-size: 30rpx;
+  color: red;
+}
+
+.food-numb {
+  height: 40rpx;
+  width: 130rpx;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 95rpx;
+  margin-right: 30rpx;
+  line-height: 40rpx;
+  font-size: 25rpx;
+}
+
+.food-numb .add, .food-numb .remove {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 30rpx;
+  text-align: center;
+}
+
+.food-numb .add {
+  font-size: 35rpx;
+  line-height: 37rpx;
+  font-weight: 700;
+  background: #ffd161;
+  margin-left: 15rpx;
+}
+
+.food-numb .remove {
+  margin-right: 15rpx;
+  line-height: 28rpx;
+  font-size: 60rpx;
+  font-weight: 500;
+  box-sizing: border-box;
+  border: 2rpx;
+  border-style: solid;
+  border-color: #b0b0b0;
+  color: #b0b0b0;
+}
+
+.footer {
+  display: flex;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 80rpx;
+}
+
+.footer .img {
+  position: absolute;
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 100rpx;
+  left: 20rpx;
+  top: -20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .img .count {
+  position: absolute;
+  left: 70rpx;
+  top: -10rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  padding: 0 12rpx;
+  color: #fff;
+  background: #f45044;
+  border-radius: 20rpx;
+}
+
+#orderPage .howMuch {
+  position: relative;
+  flex: 1;
+  font-size: 28rpx;
+  background: white;
+  line-height: 80rpx;
+  padding-left: 130rpx;
+  background: #333
+}
+
+.footer .pay {
+  width: 200rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: white;
+  font-size: 30rpx;
+  background: #888;
+}
+
+#orderPage .cost {
+  margin-top: 10rpx;
+  color: white;
+  font-size: 36rpx;
+  line-height: 60rpx;
+  height: 50rpx;
+  display: flex;
+}
+
+#orderPage .costtotal {
+  text-decoration:line-through;
+  width:120rpx;
+  font-size:30rpx;
+}
+
+.footer.active .free {
+  font-size: 25rpx;
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.footer.active .pay {
+  background: #ffd161;
+  color: black;
+}
+
+.cart-detail, .cart-detail .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cart-detail .mask {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.cart-detail .list {
+  position: absolute;
+  left: 0;
+  bottom: 80rpx;
+  width: 100%;
+  background: #f7f7f7;
+  padding: 30rpx 0;
+}
+
+.cart-detail .list .item {
+  display: -webkit-flex;
+  color: #333;
+  font-size: 32rpx;
+  line-height: 50rpx;
+  padding: 20rpx 40rpx;
+}
+
+.cart-detail .list .item .name {
+  -webkit-flex: 1;
+}
+
+.cart-detail .list .item .total {
+  width: 120rpx;
+}
+
+.cart-detail .list .item .reduce, .cart-detail .list .item .add {
+  font-size: 40rpx;
+  background: #feb70f;
+  width: 40rpx;
+  height: 40rpx;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.cart-detail .list .item .num {
+  width: 50rpx;
+  text-align: center;
+  margin: 0 5rpx;
 }
