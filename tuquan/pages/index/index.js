@@ -1,27 +1,39 @@
-//index.js
-//获取应用实例
 const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    banners: []
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  scanCode: function () {
+    wx.scanCode({
+      onlyFromCamera: true,
+      success: function (res) {
+        wx.redirectTo({
+          url: '/pages/merchant/merchant?mid=' + res
+        })
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '网络错误'
+        })
+      },
+      complete: function (res) {
+        wx.setStorageSync('mid', 1)
+        wx.navigateTo({
+          url: '/pages/merchant/merchant?mid=' + 1
+        })
+      }
     })
   },
   onLoad: function () {
+    this.setData({ banners: app.globalData.banners })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -43,7 +55,7 @@ Page({
       })
     }
   },
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({

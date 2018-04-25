@@ -23,13 +23,31 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 1,
+			"list": [
+				{
+					"id": 0,
+					"name": "m",
+					"pathName": "pages/merchant/merchant",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "scan",
+					"pathName": "pages/index/index",
+					"query": "mid=9",
+					"scene": "1011"
+				}
+			]
 		}
 	}
 }

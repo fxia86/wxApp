@@ -3,7 +3,7 @@ const util = require('../../utils/util.js')
 
 Page({
   data: {
-    signedPoints: wx.getStorageSync('signedPoints') || 0,
+    // signedPoints: wx.getStorageSync('signedPoints') || 0,
     sharedPoints: 0,
     usedPoints: 0,
     signedOn: false,

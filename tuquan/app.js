@@ -6,6 +6,18 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    //banner
+    wx.request({
+      url: "https://api.xiafeng.xyz/test",
+      header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      method: 'POST',
+      success: (res) => {
+        if (res.statusCode == 200 && res.data.length > 0) {
+          this.globalData.banners = res.data;
+        }
+      }
+    })
+
     // 登录
     wx.login({
       success: res => {
@@ -34,6 +46,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    banners: []
   }
 })

@@ -1,2 +1,15 @@
-<!--pages/merchant/merchant.wxml-->
-<text>pages/merchant/merchant.wxml</text>
+<import src="../head/head.wxml" />
+<template wx:if="{{banners.length>0}}" is="head" data="{{banners}}" />
+<view class="merchant">
+  <view class="sign">
+    <image src="https://ws1.sinaimg.cn/large/610dc034ly1fp9qm6nv50j20u00miacg.jpg" class="pic"></image>
+  </view>
+  <view class="info">
+    <view class="title">老三酸菜鱼</view>
+    <view class="desc">贼他妈好吃！</view>
+    <view class="tel">027-88888888</view>
+    <view class="addr">万松园88号</view>
+  </view>
+</view>
+<view class="goods"></view>
+<view class="footer"></view>

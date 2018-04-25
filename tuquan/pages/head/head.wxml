@@ -1,0 +1,9 @@
+<template name="head">
+  <swiper autoplay indicator-dots>
+    <block wx:for="{{banners}}" wx:key="{{}}">
+      <swiper-item>
+        <image src="{{item.picUrl}}" class="banners" />
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
